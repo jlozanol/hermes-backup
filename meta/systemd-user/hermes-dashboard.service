@@ -1,0 +1,11 @@
+[Unit]
+Description=Hermes private dashboard
+
+[Service]
+EnvironmentFile=%h/.hermes/.env
+ExecStart=/home/hermes/.local/bin/hermes dashboard --host 100.114.81.112 --port 9119 --no-open
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target

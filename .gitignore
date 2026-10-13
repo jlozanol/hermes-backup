@@ -1,0 +1,21 @@
+**/.env
+**/.env.*
+**/auth.json
+**/honcho.json
+**/*.pem
+**/*.key
+**/id_rsa*
+**/id_ed25519*
+**/*.db
+**/*.db-wal
+**/*.db-shm
+**/*.sqlite*
+**/*.sock
+**/logs/
+**/cache/
+**/__pycache__/
+**/node_modules/
+*.tmp
+# Re-allow the encrypted copies (without these two lines .env.age is silently skipped)
+!secrets/*.age
+!state/*.age

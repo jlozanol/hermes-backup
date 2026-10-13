@@ -1,0 +1,66 @@
+{
+  "jobs": [
+    {
+      "id": "3852b6bbe768",
+      "name": "morning-brief",
+      "prompt": "Generate and send the daily Gmail morning brief to Telegram",
+      "skills": [
+        "morning-brief"
+      ],
+      "skill": "morning-brief",
+      "model": null,
+      "provider": null,
+      "provider_snapshot": "openrouter",
+      "model_snapshot": "nvidia/nemotron-3-super-120b-a12b",
+      "base_url": null,
+      "script": null,
+      "no_agent": false,
+      "monitor_script": null,
+      "monitor_url": null,
+      "monitor_state": null,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 21 * * *",
+        "display": "0 21 * * *"
+      },
+      "schedule_display": "0 21 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 4
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-09-26T23:14:48.710880+00:00",
+      "next_run_at": "2026-09-29T21:00:00+00:00",
+      "last_run_at": "2026-09-28T21:17:36.942596+00:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "last_delivery_unverified": null,
+      "failure_streak": 0,
+      "deliver": "telegram",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "8591436107",
+        "chat_name": "Jorch",
+        "thread_id": null,
+        "user_id": "8591436107",
+        "scope_id": null
+      },
+      "enabled_toolsets": null,
+      "workdir": null,
+      "attach_to_session": true,
+      "fire_claim": null,
+      "last_dispatch": {
+        "scheduled_at": "2026-09-28T21:00:00+00:00",
+        "dispatched_at": "2026-09-28T21:00:31.335930+00:00",
+        "lateness_seconds": 31.3,
+        "kind": "on_time"
+      }
+    }
+  ],
+  "updated_at": "2026-09-28T21:17:37.223733+00:00"
+}

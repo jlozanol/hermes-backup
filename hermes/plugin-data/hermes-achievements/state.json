@@ -1,0 +1,24 @@
+{
+  "unlocks": {
+    "claude_confidant": {
+      "evidence": null,
+      "first_tier": "Copper",
+      "unlocked_at": 1790385412
+    },
+    "model_sommelier": {
+      "evidence": null,
+      "first_tier": "Copper",
+      "unlocked_at": 1790385412
+    },
+    "provider_polyglot": {
+      "evidence": null,
+      "first_tier": "Copper",
+      "unlocked_at": 1790385412
+    },
+    "toolset_cartographer": {
+      "evidence": null,
+      "first_tier": "Copper",
+      "unlocked_at": 1790385412
+    }
+  }
+}
