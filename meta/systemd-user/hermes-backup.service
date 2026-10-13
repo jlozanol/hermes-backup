@@ -1,0 +1,10 @@
+[Unit]
+Description=Back up Hermes agent config to GitHub
+
+[Service]
+Type=oneshot
+EnvironmentFile=%h/.config/hermes-backup.env
+ExecStart=%h/agent-backup/bin/hermes-backup.sh
+Nice=10
+IOSchedulingClass=idle
+TimeoutStartSec=15min
