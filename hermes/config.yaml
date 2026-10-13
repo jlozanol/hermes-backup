@@ -1,5 +1,5 @@
 model:
-  default: nvidia/nemotron-3-super-120b-a12b
+  default: z-ai/glm-5.3-flash:nitro
   provider: openrouter
   base_url: https://openrouter.ai/api/v1
   api_mode: chat_completions
@@ -12,7 +12,7 @@ agent:
   service_tier: ''
   fast_auto_seconds: 60
   verbose: false
-  reasoning_effort: high
+  reasoning_effort: medium
   personalities: {}
 terminal:
   backend: local
