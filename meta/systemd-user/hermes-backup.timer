@@ -2,7 +2,7 @@
 Description=Daily Hermes backup
 
 [Timer]
-OnCalendar=*-*-* 03:30:00
+OnCalendar=*-*-* 16:30:00
 RandomizedDelaySec=20min
 Persistent=true
 
