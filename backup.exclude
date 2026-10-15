@@ -36,3 +36,5 @@ terminal-sessions/
 /models_dev_cache.json
 /.skills_prompt_snapshot.json
 /.curator_backups/
+/installs/
+/tools/
