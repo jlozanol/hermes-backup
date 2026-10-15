@@ -29,6 +29,7 @@ terminal:
   docker_volumes:
     - "/home/hermes/workspace:/workspace"
     - "/home/hermes/workspace:/home/hermes/workspace"
+  docker_persist_across_processes: false
 web:
   backend: firecrawl
 browser:
@@ -110,6 +111,7 @@ cron:
   catch_up_missed: true
 kanban:
   review_dispatch: true
+  dispatch_in_gateway: false
 code_execution:
   timeout: 300
   max_tool_calls: 50

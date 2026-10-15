@@ -1,0 +1,7 @@
+[Unit]
+Description=Fetch last 24h of Gmail for the morning brief (outside the sandbox)
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 %h/agent-backup/bin/fetch_emails.py
+TimeoutStartSec=5min
