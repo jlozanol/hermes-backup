@@ -560,13 +560,13 @@
     "created_by": null,
     "last_patched_at": null,
     "last_reused_patch_generation": 0,
-    "last_used_at": "2026-10-13T21:00:53.248790+00:00",
+    "last_used_at": "2026-10-14T21:00:31.069467+00:00",
     "last_viewed_at": "2026-10-02T21:14:33.518164+00:00",
     "patch_count": 0,
     "patch_generation": 0,
     "pinned": false,
     "state": "active",
-    "use_count": 25,
+    "use_count": 26,
     "view_count": 5
   },
   "node-inspect-debugger": {
