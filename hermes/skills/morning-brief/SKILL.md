@@ -1,6 +1,6 @@
 ---
 name: morning-brief
-description: Create a short Telegram brief of the user's Gmail inbox from the email file the server fetches each morning.
+description: Gmail inbox brief. Use when the user asks to check, summarise or brief their email or inbox (e.g. "check my emails", "anything in my inbox?", "email brief"). Reads the file the server fetches; never fetches mail itself.
 category: productivity
 ---
 
@@ -10,7 +10,7 @@ Produce a short, scannable briefing of the user's inbox and send it to this Tele
 
 ## How the email gets here
 
-The server fetches the last 24 hours of Gmail at 06:30 Melbourne time, outside your sandbox, and saves it to /workspace/emails.json. You do not have Gmail access and must not try to get it.
+The server fetches the last 24 hours of Gmail every hour from 06:30 to 22:30 Melbourne time, outside your sandbox, and saves it to /workspace/emails.json. You do not have Gmail access and must not try to get it.
 
 - Never install, run, update or log in to Composio, and never run `composio link`. Gmail relinking is done by the user on the server, not by you.
 - Never try to fetch email any other way (no Gmail API calls, no web logins, no scripts that call out to mail services).
@@ -44,4 +44,4 @@ Rules: plain text only, no markdown tables, no links, and empty sections are ski
 
 ## Scheduling
 
-This brief already runs from the built-in scheduler as the cron job "morning-brief". Do not create crontab entries or additional schedules. If the user asks to change the time, change the existing job only, and remind them the server fetch runs at 06:30 Melbourne time, so the brief must run after that.
+This brief already runs from the built-in scheduler as the cron job "morning-brief". Do not create crontab entries or additional schedules. If the user asks to change the time, change the existing job only, and remind them the server fetch runs every hour from 06:30 to 22:30 Melbourne time, so the brief must run after that.

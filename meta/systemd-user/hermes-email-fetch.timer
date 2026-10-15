@@ -2,7 +2,7 @@
 Description=Daily Gmail fetch at 06:30 Melbourne time
 
 [Timer]
-OnCalendar=*-*-* 06:30:00 Australia/Melbourne
+OnCalendar=*-*-* 06..22:30:00 Australia/Melbourne
 Persistent=true
 
 [Install]
