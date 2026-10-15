@@ -1,0 +1,9 @@
+[Unit]
+Description=Fetch Gmail when the agent drops a request file
+
+[Path]
+PathExists=%h/workspace/.fetch-request
+Unit=hermes-email-fetch.service
+
+[Install]
+WantedBy=default.target

@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """fetch_emails.py: fetch the last 24h of Gmail via Composio and save it for the morning brief.
 
-Runs on the SERVER (systemd user timer), outside the agent sandbox, so the
-Composio login in ~/.composio is never visible to the agent. Writes
-~/workspace/emails.json atomically; process_emails.py (inside the sandbox) reads it.
+Runs on the SERVER, outside the agent sandbox, so the Composio login in
+~/.composio is never visible to the agent. Triggered by hermes-email-fetch.path
+when the agent creates ~/workspace/.fetch-request. Writes ~/workspace/emails.json
+atomically; process_emails.py (inside the sandbox) reads it.
 """
 import json
 import os
@@ -67,7 +68,24 @@ def inline_stored(result):
     return merged
 
 
+def recently_fetched(seconds):
+    """True if OUT holds a successful fetch newer than `seconds` ago."""
+    if seconds <= 0:
+        return False
+    try:
+        with open(OUT) as f:
+            payload = json.load(f)
+        age = (datetime.now(timezone.utc) - datetime.fromisoformat(payload["fetched_at"])).total_seconds()
+        return age < seconds and payload.get("result", {}).get("successful", False)
+    except (OSError, ValueError, KeyError, TypeError):
+        return False
+
+
 def main():
+    min_interval = int(os.environ.get("MIN_INTERVAL_SECONDS", "0"))
+    if recently_fetched(min_interval):
+        print(f"fetch skipped: last successful fetch is under {min_interval}s old")
+        sys.exit(0)
     result = inline_stored(fetch())
     payload = {"fetched_at": datetime.now(timezone.utc).isoformat(timespec="seconds"), "result": result}
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
