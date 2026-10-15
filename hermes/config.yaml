@@ -15,7 +15,7 @@ agent:
   reasoning_effort: medium
   personalities: {}
 terminal:
-  backend: local
+  backend: docker
   cwd: /home/hermes/workspace
   timeout: 180
   home_mode: auto
@@ -25,6 +25,10 @@ terminal:
   container_persistent: true
   docker_mount_cwd_to_workspace: false
   lifetime_seconds: 300
+  docker_image: docker.io/nousresearch/hermes-sandbox:desktop
+  docker_volumes:
+    - "/home/hermes/workspace:/workspace"
+    - "/home/hermes/workspace:/home/hermes/workspace"
 web:
   backend: firecrawl
 browser:
