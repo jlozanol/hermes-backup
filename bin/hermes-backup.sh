@@ -111,8 +111,8 @@ fi
   echo "os: $(. /etc/os-release 2>/dev/null && echo "$PRETTY_NAME")"
 } > meta/versions.txt
 crontab -l > meta/crontab.txt 2>/dev/null || : > meta/crontab.txt
-rsync -a --delete --include='hermes*' --exclude='*' "$HOME/.config/systemd/user/" meta/systemd-user/ 2>/dev/null || true
-rsync -a --delete --include='hermes*' --exclude='*' /etc/systemd/system/ meta/systemd-system/ 2>/dev/null || true
+rsync -a --delete --include='hermes*' --include='hermes*/**' --exclude='*' "$HOME/.config/systemd/user/" meta/systemd-user/ 2>/dev/null || true
+rsync -a --delete --include='hermes*' --include='hermes*/**' --exclude='*' /etc/systemd/system/ meta/systemd-system/ 2>/dev/null || true
 
 # ---- 5. Leak scan on every plain-text folder (blocks the commit on any finding) ----
 for d in hermes extra meta; do
