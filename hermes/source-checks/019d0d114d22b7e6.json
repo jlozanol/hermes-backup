@@ -11,7 +11,7 @@
     "channelProtocol": 1,
     "forwardOnly": true
   },
-  "ts": 1792119638.2908251,
+  "ts": 1792124277.7922544,
   "status": {
     "supported": true,
     "hermesRoot": "/home/hermes/.hermes/hermes-agent",
@@ -21,7 +21,7 @@
     "currentBranch": "main",
     "dirty": false,
     "channel": "stable",
-    "fetchedAt": 1792119638290,
+    "fetchedAt": 1792124277792,
     "error": "release-unavailable",
     "message": "Could not resolve the stable source channel: Command '['git', 'merge-base', '--is-ancestor', 'd923a5eb487a17c0a68801bba9ef0f56c81040a8', 'dfa79389773271ee78c41a7af340848948d461ee']' timed out after 10 seconds"
   }
