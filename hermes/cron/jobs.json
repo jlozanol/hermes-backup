@@ -29,9 +29,9 @@
         "times": null,
         "completed": 7
       },
-      "enabled": true,
-      "state": "scheduled",
-      "paused_at": null,
+      "enabled": false,
+      "state": "paused",
+      "paused_at": "2026-10-16T04:51:06.813466+00:00",
       "paused_reason": null,
       "created_at": "2026-10-08T21:07:44.290594+00:00",
       "next_run_at": "2026-10-16T21:00:00+00:00",
@@ -65,5 +65,5 @@
       ]
     }
   ],
-  "updated_at": "2026-10-15T21:00:32.109498+00:00"
+  "updated_at": "2026-10-16T04:51:06.814584+00:00"
 }
