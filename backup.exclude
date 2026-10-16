@@ -38,3 +38,7 @@ terminal-sessions/
 /.curator_backups/
 /installs/
 /tools/
+/runtime/
+*.pid
+*.lock
+/gateway_state.json
