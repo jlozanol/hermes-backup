@@ -62,7 +62,7 @@ encrypt_if_changed() {   # $1 = source path, $2 = flat name
 while IFS= read -r -d '' f; do
   rel="${f#./}"
   encrypt_if_changed "$HERMES_HOME/$rel" "${rel//\//__}"
-done < <(cd "$HERMES_HOME" && find . -path ./hermes-agent -prune -o -type f \
+done < <(cd "$HERMES_HOME" && find . \( -path ./hermes-agent -o -path ./state-snapshots -o -path ./backups \) -prune -o -type f \
           \( -name .env -o -name 'auth.json' -o -name 'honcho.json' \) -print0)
 for f in secrets/*.age; do
   [ -e "$f" ] || continue
