@@ -1,0 +1,7 @@
+[Unit]
+Description=Ping healthchecks.io while the Hermes gateway is running
+
+[Service]
+Type=oneshot
+EnvironmentFile=%h/.config/hermes-heartbeat.env
+ExecStart=/bin/sh -c 'if systemctl --user is-active --quiet hermes-gateway; then curl -fsS -m 10 --retry 3 -o /dev/null "$HC_GATEWAY_URL"; else curl -fsS -m 10 --retry 3 -o /dev/null "$HC_GATEWAY_URL/fail"; fi'
